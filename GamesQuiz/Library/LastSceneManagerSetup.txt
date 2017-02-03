@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Quiz.unity
+- path: Assets/Fragen.unity
   isLoaded: 1
   isActive: 1
