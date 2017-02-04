@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     public static int j = 0 ;
-    public static int left = 0;
-    public static int up = 1;
-    public static int right = 2;
-  
+   
 
     // Use this for initialization
     void Start () {
