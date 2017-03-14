@@ -17,7 +17,7 @@ public class Antworten : MonoBehaviour {
     bool up;
     bool right;
     bool checkFisnish = false;
-    public static int Fragennum = 0;
+    //public static int Fragennum = Fragen.Fragennum;
     public static float fillAmountPlayer1 = 0;
     private bool canClick;
     private bool canClick2;
@@ -31,11 +31,6 @@ public class Antworten : MonoBehaviour {
     public AudioSource BackgroundMusic;
     public AudioSource Applaus;
     public AudioSource Boo;
-
-
-
-
-
 
 
 
@@ -86,11 +81,11 @@ public class Antworten : MonoBehaviour {
     } 
     // Use this for initialization
     void Awake () {
-        Debug.Log("J: " + Player.j);
+        //Debug.Log("J: " + Player.j);
         //Player.PlayerScore1.fillAmount = fillAmountPlayer1 ;
 
 
-        int i = Player.j;  // counter
+           int i = (Fragen.Fragennum * 3);  // counter
             txt1.text = AntwortenArray[i];
             txt2.text = AntwortenArray[i+1];
             txt3.text = AntwortenArray[i+2];
@@ -98,7 +93,7 @@ public class Antworten : MonoBehaviour {
             txt2_2.text = AntwortenArray[i + 1];
             txt3_2.text = AntwortenArray[i + 2];
 
-        left = LösungenArray[i];
+            left = LösungenArray[i];
             up = LösungenArray[i+1];
             right = LösungenArray[i+2];
 
@@ -118,7 +113,7 @@ public class Antworten : MonoBehaviour {
         Scene currentScene = SceneManager.GetActiveScene();
 
         Debug.Log("Fragennumm : " + Fragen.Fragennum);
-
+        Debug.Log("Counter : " + Fragen.counter);
         if (Input.GetKeyDown(KeyCode.LeftArrow) && (currentScene.name == "Antworten") && (left == true) && canClick == true)
 
         {
@@ -232,11 +227,12 @@ public class Antworten : MonoBehaviour {
             aTimer -= Time.deltaTime;
             if (aTimer <= 0)
             {
-                if (Fragen.Fragennum == 9)
+                if (Fragen.counter == 9)
                 {
                     checkFisnish = true;
                     WinLoose();
                     BackgroundMusic.Stop();
+                    SceneManager.LoadScene("Menu");
                 }
                 else
                 {
@@ -259,11 +255,12 @@ public class Antworten : MonoBehaviour {
             bTimer -= Time.deltaTime;
             if (bTimer <= 0)
             {
-                if (Fragen.Fragennum == 9)
+                if (Fragen.counter == 9)
                 {
                     checkFisnish = true;
                     WinLoose();
                     BackgroundMusic.Stop();
+                    SceneManager.LoadScene("Menu");
                 }
                 else
                 {
@@ -275,6 +272,7 @@ public class Antworten : MonoBehaviour {
                     RichtigFalsch1.enabled = true;
                     RichtigFalsch2.enabled = true;
                     SceneManager.LoadScene("Fragen");
+                  
                 }
                 
             }
@@ -284,11 +282,13 @@ public class Antworten : MonoBehaviour {
 
         if(canClick == false && canClick2 == false)
         {
-            if (Fragen.Fragennum == 9)
+
+            if (Fragen.counter == 9)
             {
                 checkFisnish = true;
                 WinLoose();
                 BackgroundMusic.Stop();
+                SceneManager.LoadScene("Menu");
             }
             else
             {
@@ -300,18 +300,17 @@ public class Antworten : MonoBehaviour {
                 RichtigFalsch2.enabled = true;
             }
 
-
             cTimer -= Time.deltaTime; 
             if(cTimer <=0)      
             {
-                Fragen.Fragennum++;
+                Fragen.counter++;
                 SceneManager.LoadScene("Fragen");
             }
         }
 
         if (Input.GetKey(KeyCode.Space) && (currentScene.name == "Antworten"))
         {
-            Fragen.Fragennum++;
+            Fragen.counter++;
             SceneManager.LoadScene("Fragen");
         }
     }

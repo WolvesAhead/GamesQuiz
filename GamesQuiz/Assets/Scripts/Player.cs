@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public static int j = 0 ;
+    public static int j = Fragen.Fragennum ;
     private float qTimer = 10;
     private bool timeOut = false;
     private bool player1first = false;
