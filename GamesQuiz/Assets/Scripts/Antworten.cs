@@ -42,16 +42,16 @@ public class Antworten : MonoBehaviour {
     string[] AntwortenArray = 
     
     {
-      "2", "3","4", 
-      "Antwort 1 Frage 2", "Antwort 2 Frage 2","Antwort 3 Frage 2",
-      "Antwort 1 Frage 3", "Antwort 2 Frage 3","Antwort 3 Frage 3",
-      "Antwort 1 Frage 4", "Antwort 2 Frage 4","Antwort 3 Frage 4",
-      "Antwort 1 Frage 5", "Antwort 2 Frage 5","Antwort 3 Frage 5",
-      "Antwort 1 Frage 6", "Antwort 2 Frage 6","Antwort 3 Frage 6",
-      "Antwort 1 Frage 7", "Antwort 2 Frage 7","Antwort 3 Frage 7",
-      "Antwort 1 Frage 8", "Antwort 2 Frage 8","Antwort 3 Frage 8",
-      "Antwort 1 Frage 9", "Antwort 2 Frage 9","Antwort 3 Frage 9",
-      "Antwort 1 Frage 10", "Antwort 2 Frage 10","Antwort 3 Frage 10",
+      "4", "2","5", 
+      "874", "365","265",
+      "Wario", "Plumberman","Mr. Video",
+      "Playstation 2", "Nintendo Ds","Game Boy",
+      "Ein Auto", "Ein Gen","Schuhe",
+      "4", "8","26",
+      "Agro", "Epona","Wanda",
+      "Dante & Virgil", "Ebony & Ivory","Black & White",
+      "Pokémon Gelb", "Tetris","Wii Sports",
+      "801", "1024","637",
     };
 
 
