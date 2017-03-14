@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
     public Image TimerRed;
     public static int p1Score;
     public static int p2Score;
+    public static Image PlayerScore1;
+    public static Image PlayerScore2;
+    public static int Player2Score;
 
 
 
@@ -21,13 +24,22 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        PlayerScore1 = GameObject.Find("PlayerScore1").GetComponent<Image>();
+        PlayerScore2 = GameObject.Find("PlayerScore2").GetComponent<Image>();
         //TimerBlue_gb.SetActive(false);
         //TimerRed_gb.SetActive(false);
-        
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Awake()
+    {
+        // PlayerScore1 = GameObject.Find("PlayerScore1").GetComponent<Image>();
+        //Antworten.fillAmountPlayer1 = PlayerScore1.fillAmount;
+    }
+
+
+    // Update is called once per frame
+    void Update () {
         Scene currentScene = SceneManager.GetActiveScene();
 
       
