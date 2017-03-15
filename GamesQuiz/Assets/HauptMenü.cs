@@ -5,10 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class HauptMenü : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public static int[] intArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    int i = 0;
+    // Use this for initialization
+    void Start () {
+        for (int i = 9; i > 0; i--)
+        {
+
+            int j = Random.Range(0, 9);
+            int temp = intArray[i];
+            intArray[i] = intArray[j];
+            intArray[j] = temp;
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            Debug.Log("IntArray " + intArray[i]);
+
+        }
+        
+    }
+
 	
 	// Update is called once per frame
 	void Update () {

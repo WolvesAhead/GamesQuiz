@@ -227,6 +227,7 @@ public class Antworten : MonoBehaviour {
             aTimer -= Time.deltaTime;
             if (aTimer <= 0)
             {
+                Fragen.counter++;
                 if (Fragen.counter == 9)
                 {
                     checkFisnish = true;
@@ -240,6 +241,7 @@ public class Antworten : MonoBehaviour {
                     SoundManager();
                     Player.PlayerScore1.enabled = true;
                     Player.PlayerScore2.enabled = true;
+                    GameObject.Find("Directional Light").GetComponent<Light>().enabled = false;
                     RichtigFalsch1.enabled = true;
                     RichtigFalsch2.enabled = true;
                     SceneManager.LoadScene("Fragen");
@@ -255,6 +257,7 @@ public class Antworten : MonoBehaviour {
             bTimer -= Time.deltaTime;
             if (bTimer <= 0)
             {
+                Fragen.counter++;
                 if (Fragen.counter == 9)
                 {
                     checkFisnish = true;
@@ -268,7 +271,7 @@ public class Antworten : MonoBehaviour {
                     SoundManager();
                     Player.PlayerScore1.enabled = true;
                     Player.PlayerScore2.enabled = true;
-
+                    GameObject.Find("Directional Light").GetComponent<Light>().enabled = false;
                     RichtigFalsch1.enabled = true;
                     RichtigFalsch2.enabled = true;
                     SceneManager.LoadScene("Fragen");
@@ -296,6 +299,7 @@ public class Antworten : MonoBehaviour {
                 SoundManager();
                 Player.PlayerScore1.enabled = true;
                 Player.PlayerScore2.enabled = true;
+                GameObject.Find("Directional Light").GetComponent<Light>().enabled = false;
                 RichtigFalsch1.enabled = true;
                 RichtigFalsch2.enabled = true;
             }
@@ -324,6 +328,8 @@ public class Antworten : MonoBehaviour {
             RichtigFalsch1.text = "WINNER";
             RichtigFalsch1.enabled = true;
             RichtigFalsch2.enabled = true;
+            GameObject.Find("Directional Light").GetComponent<Light>().enabled = false;
+
 
             Applaus.Play();
         }
@@ -331,6 +337,7 @@ public class Antworten : MonoBehaviour {
         {
             RichtigFalsch1.text = "LOSER";
             RichtigFalsch2.text = "WINNER";
+            GameObject.Find("Directional Light").GetComponent<Light>().enabled = false;
             RichtigFalsch1.enabled = true;
             RichtigFalsch2.enabled = true;
             Applaus.Play();
@@ -339,6 +346,7 @@ public class Antworten : MonoBehaviour {
         {
             RichtigFalsch1.text = "UNENTSCHIEDEN";
             RichtigFalsch2.text = "UNENTSCHIEDEN";
+            GameObject.Find("Directional Light").GetComponent<Light>().enabled = false;
             RichtigFalsch1.enabled = true;
             RichtigFalsch2.enabled = true;
             Applaus.Play();

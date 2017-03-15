@@ -7,8 +7,8 @@ public class Fragen : MonoBehaviour {
 
     public Text txt;
     public Text txt2;
-    public static int[] intArray = {0,1,2,3,4,5,6,7,8,9};
-    int i = 0;
+    
+    
     bool schongefragt = false; 
 
 
@@ -19,59 +19,23 @@ public class Fragen : MonoBehaviour {
     public static int counter = 0;
 
     // Use this for initialization
-    void Start () {
+    void Start() { }
 
       
 
-    }
-
     void Awake()
     {
-        Fragennum = Random.Range(0, 9);
-        schongefragt = true;            
-
-        for (i = 0; i < 10; i++)
-        {
-            Debug.Log("IntArray " + intArray[i]);
-            int random = Random.Range(0, 9);
-            intArray[i] = random; 
-            if (checkRandom(random))
-            {
-                intArray[i] = -1;
-              
-            }
-        }
-
-     
-
-
+        Fragen.Fragennum = HauptMenü.intArray[Fragen.counter];
     }
 
 
     // Update is called once per frame
     void Update () {
-      
-
 
         txt.text = FragenArray[Fragennum];
         txt2.text = FragenArray[Fragennum];
 
     }
 
-    bool checkRandom (int random)
-    {
-        bool isHere = false;
-
-        for (int i = 0; i < 10; i++)
-        {
-            if ( intArray[i] == random)
-            {
-                isHere = true;
-            }
-
-        }
-        return isHere;
-
-    }
         
 }
