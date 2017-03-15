@@ -62,7 +62,7 @@ public class Antworten : MonoBehaviour {
         true,false,false,
         false,true,false,
         false,false,true,
-        false,false,true,
+        true,false,false,
 
 
       // Lösungen ;

@@ -9,6 +9,11 @@ public class HauptMenü : MonoBehaviour {
     int i = 0;
     // Use this for initialization
     void Start () {
+        Fragen.Fragennum = 0;
+        Fragen.counter = 0;
+        Player.p1Score = 0;
+        Player.p2Score = 0;
+
         for (int i = 9; i > 0; i--)
         {
 
