@@ -14,7 +14,7 @@ public class Fragen : MonoBehaviour {
 
 
 
-    string[] FragenArray = { "Aus wie vielen CDs bestand Final Fantasy VII in der PC-Version?", "Wie oft wird das Wort Fuck in GTA:San Andreas gesagt?", "Wie lautet Super Marios ursprünglicher Name?", "Welche Spielkonsole wurde weltweit am meisten verkauft?", "Was wurde nach dem blauen Igel Sonic benannt?", "Wie viele verschiedene Enden hat Nier: Automata?", "Wie heißt das Pferd des Helden in Shadow of the Colossus?", "Wie heißen Dantes Revolver aus Devil May Cry?", "Welches ist das meistverkaufte Spiel weltweit?", "Wie viele Pokémon gibt es ?" };
+    string[] FragenArray = { "Aus wie vielen CDs bestand Final Fantasy VII in der PC-Version?", "Wie oft wird das Wort Fuck in GTA:San Andreas gesagt?", "Wie lautet Super Marios ursprünglicher Name?", "Welche Spielkonsole wurde weltweit am meisten verkauft?", "Was wurde nach Sonic, dem blauen Igel, benannt?", "Wie viele verschiedene Enden hat Nier: Automata?", "Wie heißt das Pferd des Helden in Shadow of the Colossus?", "Wie heißen Dantes Revolver aus Devil May Cry?", "Welches ist das meistverkaufte Spiel weltweit?", "Wie viele Pokémon gibt es ?" };
     public static int Fragennum;
     public static int counter = 0;
 
@@ -28,33 +28,23 @@ public class Fragen : MonoBehaviour {
     void Awake()
     {
         Fragennum = Random.Range(0, 9);
-
-        do
-        {
-            schongefragt = true;
-            Fragennum = Random.Range(0, 9);
-
-            if (intArray[Fragennum] != -1)
-            {
-                
-                schongefragt = false;
-            }
-        }
-        while (schongefragt);
-
+        schongefragt = true;            
 
         for (i = 0; i < 10; i++)
         {
             Debug.Log("IntArray " + intArray[i]);
-            if (intArray[i] == Fragennum)
+            int random = Random.Range(0, 9);
+            intArray[i] = random; 
+            if (checkRandom(random))
             {
                 intArray[i] = -1;
               
-
             }
         }
 
-        
+     
+
+
     }
 
 
@@ -67,4 +57,21 @@ public class Fragen : MonoBehaviour {
         txt2.text = FragenArray[Fragennum];
 
     }
+
+    bool checkRandom (int random)
+    {
+        bool isHere = false;
+
+        for (int i = 0; i < 10; i++)
+        {
+            if ( intArray[i] == random)
+            {
+                isHere = true;
+            }
+
+        }
+        return isHere;
+
+    }
+        
 }

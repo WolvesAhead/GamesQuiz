@@ -230,7 +230,7 @@ public class Antworten : MonoBehaviour {
                 if (Fragen.counter == 9)
                 {
                     checkFisnish = true;
-                    WinLoose();
+                    WinLose();
                     BackgroundMusic.Stop();
                     SceneManager.LoadScene("Menu");
                 }
@@ -258,7 +258,7 @@ public class Antworten : MonoBehaviour {
                 if (Fragen.counter == 9)
                 {
                     checkFisnish = true;
-                    WinLoose();
+                    WinLose();
                     BackgroundMusic.Stop();
                     SceneManager.LoadScene("Menu");
                 }
@@ -286,7 +286,7 @@ public class Antworten : MonoBehaviour {
             if (Fragen.counter == 9)
             {
                 checkFisnish = true;
-                WinLoose();
+                WinLose();
                 BackgroundMusic.Stop();
                 SceneManager.LoadScene("Menu");
             }
@@ -316,11 +316,11 @@ public class Antworten : MonoBehaviour {
     }
   
 
-    void WinLoose ()
+    void WinLose ()
     {
         if(Player.p1Score > Player.p2Score)
         {
-            RichtigFalsch2.text = "LOOSER";
+            RichtigFalsch2.text = "LOSER";
             RichtigFalsch1.text = "WINNER";
             RichtigFalsch1.enabled = true;
             RichtigFalsch2.enabled = true;
@@ -329,7 +329,7 @@ public class Antworten : MonoBehaviour {
         }
         if (Player.p1Score < Player.p2Score)
         {
-            RichtigFalsch1.text = "LOOSER";
+            RichtigFalsch1.text = "LOSER";
             RichtigFalsch2.text = "WINNER";
             RichtigFalsch1.enabled = true;
             RichtigFalsch2.enabled = true;
@@ -337,8 +337,8 @@ public class Antworten : MonoBehaviour {
         }
         if  (Player.p1Score == Player.p2Score)
         {
-            RichtigFalsch1.text = "EQUAL";
-            RichtigFalsch2.text = "EQUAL";
+            RichtigFalsch1.text = "UNENTSCHIEDEN";
+            RichtigFalsch2.text = "UNENTSCHIEDEN";
             RichtigFalsch1.enabled = true;
             RichtigFalsch2.enabled = true;
             Applaus.Play();
