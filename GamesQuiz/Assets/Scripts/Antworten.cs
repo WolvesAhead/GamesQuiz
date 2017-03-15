@@ -292,6 +292,7 @@ public class Antworten : MonoBehaviour {
                 WinLose();
                 BackgroundMusic.Stop();
                 SceneManager.LoadScene("Menu");
+
             }
             else
             {
@@ -307,6 +308,7 @@ public class Antworten : MonoBehaviour {
             cTimer -= Time.deltaTime; 
             if(cTimer <=0)      
             {
+              
                 Fragen.counter++;
                 SceneManager.LoadScene("Fragen");
             }
